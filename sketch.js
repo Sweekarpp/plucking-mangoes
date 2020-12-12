@@ -21,26 +21,24 @@ function setup(){
     ground = new Ground(600,height,1200,20);
     platform = new Ground(150, 305, 300, 170);
 
-    
-    pig1 = new Pig(810, 350);
-    log1 = new Log(810,260,300, PI/2);
 
-    
-    pig3 = new Pig(810, 220);
-
-   
+    pig1 = new Pig(810, 300);
+    log1 = new Log(810,260,300, PI/0.00001);
 
 
-    bird = new Bird(200,50);
+    pig3 = new Pig(810, 350);
 
-    //log6 = new Log(230,180,80, PI/2);
+
+
+
+    bird = new Bird(200,10);
+
     slingshot = new SlingShot(bird.body,{x:200, y:50});
 }
 
 function draw(){
     background(backgroundImg);
     Engine.update(engine);
-    //strokeWeight(4);
     ground.display();
     pig1.display();
     log1.display();
@@ -50,7 +48,7 @@ function draw(){
 
     bird.display();
     platform.display();
-    slingshot.display();    
+    slingshot.display();
 }
 
 function mouseDragged(){
@@ -62,7 +60,7 @@ function mouseReleased(){
     slingshot.fly();
 }
 function keyPressed(){
-if(keyCode = 32){
+if(keyCode === 32){
 slingshot.attach(bird.body);
 
 }
